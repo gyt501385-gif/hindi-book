@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>अपने लक्ष्य की ओर | Official Book Store</title>
+
+  <meta name="description"
+    content="अपने लक्ष्य की ओर - सफलता, आत्मविश्वास और सकारात्मक सोच पर आधारित हिंदी पुस्तक।">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, "Noto Sans Devanagari", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f7f8fc;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 16px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,.15);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      opacity: .75;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 6%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .book-image {
+      text-align: center;
+    }
+
+    .book-image img {
+      width: min(360px, 90%);
+      border-radius: 10px;
+      box-shadow: 0 25px 50px rgba(0,0,0,.25);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: #111827;
+    }
+
+    .hero h2 {
+      font-size: 24px;
+      color: #2563eb;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #4b5563;
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      font-size: 32px;
+      font-weight: bold;
+      color: #111827;
+      margin: 20px 0;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #9ca3af;
+      font-size: 19px;
+      margin-left: 10px;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      background: #16a34a;
+      color: white;
+      padding: 15px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .buy-btn:hover {
+      background: #15803d;
+      transform: translateY(-2px);
+    }
+
+    /* ================= SECTION ================= */
+
+    section {
+      padding: 70px 6%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: #111827;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about-container {
+      max-width: 950px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-container p {
+      font-size: 17px;
+      color: #4b5563;
+      margin-bottom: 15px;
+    }
+
+    /* ================= FEATURES ================= */
+
+    .features {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    }
+
+    .feature-icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .feature h3 {
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    /* ================= AUTHOR ================= */
+
+    .author {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 5px 25px rgba(0,0,0,.06);
+    }
+
+    .author h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .author p {
+      color: #6b7280;
+    }
+
+    /* ================= ORDER ================= */
+
+    .order-section {
+      background: #eef2ff;
+    }
+
+    .order-box {
+      max-width: 650px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+
+    .order-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d1d5db;
+      border-radius: 7px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #2563eb;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .total {
+      margin: 22px 0;
+      padding: 15px;
+      background: #f3f4f6;
+      border-radius: 8px;
+      font-size: 19px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .whatsapp-btn {
+      width: 100%;
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .whatsapp-btn:hover {
+      background: #1ebe5d;
+    }
+
+    /* ================= DELIVERY ================= */
+
+    .delivery {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .delivery-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,.05);
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #111827;
+      color: white;
+      padding: 35px 6%;
+      text-align: center;
+    }
+
+    footer p {
+      color: #d1d5db;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    /* ================= FLOATING WHATSAPP ================= */
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 5px 20px rgba(0,0,0,.2);
+      z-index: 999;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 800px) {
+
+      header {
+        padding: 14px 5%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 45px 5%;
+        text-align: center;
+        gap: 35px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero h2 {
+        font-size: 20px;
+      }
+
+      .features {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .delivery {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 50px 5%;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .order-box {
+        padding: 22px;
+      }
+
+      .hero h1 {
+        font-size: 31px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+  <div class="logo">
+    📚 Book Store
+  </div>
+
+  <nav>
+    <a href="#book">पुस्तक</a>
+    <a href="#about">जानकारी</a>
+    <a href="#author">लेखक</a>
+    <a href="#order">ऑर्डर</a>
+  </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="book">
+
+  <div class="book-image">
+
+    <!--
+      अपनी book की image का नाम
+      book-cover.png रखें।
+    -->
+
+    <img
+      src="book-cover.png"
+      alt="अपने लक्ष्य की ओर पुस्तक"
+    >
+
+  </div>
+
+
+  <div>
+
+    <h2>नई हिंदी पुस्तक</h2>
+
+    <h1>अपने लक्ष्य की ओर</h1>
+
+    <p>
+      सकारात्मक सोच, सही दिशा और लगातार प्रयास
+      से सफलता पाने की प्रेरणादायक पुस्तक।
+    </p>
+
+    <div class="price">
+
+      ₹299
+
+      <span class="old-price">
+        ₹399
+      </span>
+
+    </div>
+
+    <a
+      href="#order"
+      class="buy-btn"
+    >
+      अभी ऑर्डर करें
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT BOOK ================= -->
+
+<section
+  class="about"
+  id="about"
+>
+
+  <div class="about-container">
+
+    <h2 class="section-title">
+      पुस्तक के बारे में
+    </h2>
+
+    <p>
+      "अपने लक्ष्य की ओर" एक प्रेरणादायक हिंदी पुस्तक है
+      जो लक्ष्य निर्धारित करने, सकारात्मक सोच विकसित करने
+      और अपने जीवन में निरंतर आगे बढ़ने की प्रेरणा देती है।
+    </p>
+
+    <p>
+      यह पुस्तक विद्यार्थियों, युवाओं और उन सभी लोगों के लिए
+      उपयोगी है जो अपने जीवन में कुछ बड़ा हासिल करना चाहते हैं।
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section>
+
+  <h2 class="section-title">
+    इस पुस्तक में क्या मिलेगा?
+  </h2>
+
+
+  <div class="features">
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        🎯
+      </div>
+
+      <h3>
+        सही लक्ष्य
+      </h3>
+
+      <p>
+        अपने लक्ष्य को पहचानने और उस पर ध्यान केंद्रित करने की सीख।
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        🧠
+      </div>
+
+      <h3>
+        मजबूत सोच
+      </h3>
+
+      <p>
+        सकारात्मक और मजबूत मानसिकता विकसित करने की प्रेरणा।
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        📈
+      </div>
+
+      <h3>
+        लगातार प्रयास
+      </h3>
+
+      <p>
+        असफलताओं के बावजूद आगे बढ़ते रहने की प्रेरणा।
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        ⭐
+      </div>
+
+      <h3>
+        सफलता की दिशा
+      </h3>
+
+      <p>
+        अपने जीवन को बेहतर दिशा में ले जाने वाले उपयोगी विचार।
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= AUTHOR ================= -->
+
+<section
+  class="about"
+  id="author"
+>
+
+  <div class="author">
+
+    <h2 class="section-title">
+      लेखक के बारे में
+    </h2>
+
+    <h3>
+      लेखक: आपका नाम
+    </h3>
+
+    <p>
+      लेखक के बारे में यहां आपका परिचय,
+      उपलब्धियां और पुस्तक लिखने का उद्देश्य लिखा जाएगा।
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= DELIVERY ================= -->
+
+<section>
+
+  <h2 class="section-title">
+    ऑर्डर की जानकारी
+  </h2>
+
+
+  <div class="delivery">
+
+    <div class="delivery-card">
+
+      <h3>
+        📦 सुरक्षित पैकिंग
+      </h3>
+
+      <p>
+        आपकी पुस्तक सुरक्षित तरीके से पैक करके भेजी जाएगी।
+      </p>
+
+    </div>
+
+
+    <div class="delivery-card">
+
+      <h3>
+        🚚 होम डिलीवरी
+      </h3>
+
+      <p>
+        आपके दिए गए पते पर पुस्तक भेजी जाएगी।
+      </p>
+
+    </div>
+
+
+    <div class="delivery-card">
+
+      <h3>
+        💬 WhatsApp Order
+      </h3>
+
+      <p>
+        ऑर्डर की जानकारी सीधे WhatsApp पर प्राप्त होगी।
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ORDER FORM ================= -->
+
+<section
+  class="order-section"
+  id="order"
+>
+
+  <div class="order-box">
+
+    <h2>
+      📚 पुस्तक ऑर्डर करें
+    </h2>
+
+
+    <label>
+      आपका नाम
+    </label>
+
+    <input
+      type="text"
+      id="name"
+      placeholder="अपना पूरा नाम लिखें"
+    >
+
+
+    <label>
+      मोबाइल नंबर
+    </label>
+
+    <input
+      type="tel"
+      id="phone"
+      placeholder="10 अंकों का मोबाइल नंबर"
+      maxlength="10"
+    >
+
+
+    <label>
+      कितनी पुस्तक चाहिए?
+    </label>
+
+    <select
+      id="quantity"
+      onchange="calculateTotal()"
+    >
+
+      <option value="1">
+        1 पुस्तक
+      </option>
+
+      <option value="2">
+        2 पुस्तकें
+      </option>
+
+      <option value="3">
+        3 पुस्तकें
+      </option>
+
+      <option value="4">
+        4 पुस्तकें
+      </option>
+
+      <option value="5">
+        5 पुस्तकें
+      </option>
+
+    </select>
+
+
+    <label>
+      पूरा पता
+    </label>
+
+    <textarea
+      id="address"
+      placeholder="घर नंबर, गांव/मोहल्ला, शहर, जिला, राज्य, PIN code"
+    ></textarea>
+
+
+    <label>
+      Payment Method
+    </label>
+
+    <select id="payment">
+
+      <option value="Cash on Delivery">
+        Cash on Delivery
+      </option>
+
+      <option value="Online Payment">
+        Online Payment
+      </option>
+
+    </select>
+
+
+    <div class="total">
+
+      <span>
+        कुल कीमत
+      </span>
+
+      <span id="total">
+        ₹299
+      </span>
+
+    </div>
+
+
+    <button
+      class="whatsapp-btn"
+      onclick="sendOrder()"
+    >
+      💬 WhatsApp पर Order भेजें
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <h3>
+    📚 अपने लक्ष्य की ओर
+  </h3>
+
+  <p>
+    © 2026 All Rights Reserved.
+  </p>
+
+  <p>
+    Official Book Store
+  </p>
+
+  <p>
+    WhatsApp: 8953730111
+  </p>
+
+</footer>
+
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+
+<a
+  class="floating-whatsapp"
+  href="https://wa.me/918953730111"
+  target="_blank"
+  aria-label="WhatsApp"
+>
+  💬
+</a>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+  /* =========================
+     BOOK SETTINGS
+  ========================= */
+
+  const BOOK_PRICE = 299;
+
+
+  /*
+    तुम्हारा WhatsApp नंबर:
+
+    8953730111
+
+    International format:
+    918953730111
+  */
+
+  const WHATSAPP_NUMBER = "918953730111";
+
+
+  /* =========================
+     TOTAL PRICE
+  ========================= */
+
+  function calculateTotal() {
+
+    const quantity =
+      document.getElementById("quantity").value;
+
+    const total =
+      BOOK_PRICE * quantity;
+
+    document.getElementById("total").innerText =
+      "₹" + total;
+
+  }
+
+
+  /* =========================
+     SEND ORDER TO WHATSAPP
+  ========================= */
+
+  function sendOrder() {
+
+    const name =
+      document.getElementById("name").value.trim();
+
+    const phone =
+      document.getElementById("phone").value.trim();
+
+    const quantity =
+      document.getElementById("quantity").value;
+
+    const address =
+      document.getElementById("address").value.trim();
+
+    const payment =
+      document.getElementById("payment").value;
+
+
+    /* NAME CHECK */
+
+    if (name === "") {
+
+      alert("कृपया अपना नाम लिखें।");
+
+      return;
+
+    }
+
+
+    /* MOBILE CHECK */
+
+    if (!/^[0-9]{10}$/.test(phone)) {
+
+      alert(
+        "कृपया सही 10 अंकों का मोबाइल नंबर डालें।"
+      );
+
+      return;
+
+    }
+
+
+    /* ADDRESS CHECK */
+
+    if (address === "") {
+
+      alert(
+        "कृपया अपना पूरा पता लिखें।"
+      );
+
+      return;
+
+    }
+
+
+    /* TOTAL */
+
+    const total =
+      BOOK_PRICE * quantity;
+
+
+    /* WHATSAPP MESSAGE */
+
+    const message =
+
+`📚 *NEW BOOK ORDER*
+
+━━━━━━━━━━━━━━━━━━
+
+📖 *Book:* अपने लक्ष्य की ओर
+
+👤 *Customer Name:* ${name}
+
+📱 *Customer Mobile:* ${phone}
+
+📦 *Quantity:* ${quantity}
+
+💰 *Total:* ₹${total}
+
+💳 *Payment:* ${payment}
+
+🏠 *Delivery Address:*
+${address}
+
+━━━━━━━━━━━━━━━━━━
+
+कृपया इस Order को confirm करें।`;
+
+
+    /* CREATE WHATSAPP LINK */
+
+    const whatsappURL =
+      "https://wa.me/" +
+      WHATSAPP_NUMBER +
+      "?text=" +
+      encodeURIComponent(message);
+
+
+    /* OPEN WHATSAPP */
+
+    window.open(
+      whatsappURL,
+      "_blank"
+    );
+
+  }
+
+</script>
+
+
+</body>
+</html>
